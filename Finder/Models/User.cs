@@ -33,11 +33,26 @@ public class User : BaseEntity
     /// <summary>
     /// Список интересов
     /// </summary>
-    public List<Interest>? Interests { get; set; }
+    public ICollection<Interest>? Interests { get; set; }
 
     /// <summary>
-    /// Сообщения
+    /// Полученные сообщения
     /// </summary>
-    public List<Message>? Messages { get; set; }
+    public ICollection<Message>? SentMessages { get; set; }
+
+    /// <summary>
+    /// Отправленные сообщения
+    /// </summary>
+    public ICollection<Message>? ReceivedMessages { get; set; }
+
+    /// <summary>
+    /// Отправленные метчи
+    /// </summary>
+    public ICollection<Match>? SentMatches { get; set; }
+
+    /// <summary>
+    /// Полученные метчи
+    /// </summary>
+    public ICollection<Match>? ReceivedMatches { get; set; }
 
 }

@@ -7,14 +7,23 @@ namespace Finder.Models;
 public class Match : BaseEntity
 {
     /// <summary>
-    /// Индификатор пользователя, который кинул метч
+    /// Индификатор пользователя, который отправил метч
+    /// </summary>
+    public int UserSenderId { get; set; }
+
+    /// <summary>
+    /// Пользователь который отправил метч
     /// </summary>
     public User UserSender { get; set; }
 
     /// <summary>
     /// Индификатор пользователя, который получил метч
     /// </summary>
-    [ForeignKey("UserReceiverId")]
+    public int UserRecieverId { get; set; }
+
+    /// <summary>
+    /// Пользователь, который получил метч
+    /// </summary>
     public User UserReciever { get; set; }
 
     /// <summary>

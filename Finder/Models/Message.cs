@@ -7,6 +7,11 @@ namespace Finder.Models;
 public class Message : BaseEntity
 {
     /// <summary>
+    /// Идентификатор пользователя, который отправил приветсвенное сообщение
+    /// </summary>
+    public int UserSenderId { get; set; }
+
+    /// <summary>
     /// Пользователь, который отправил приветсвенное сообщение
     /// </summary>
     public User UserSender { get; set; }
@@ -19,7 +24,6 @@ public class Message : BaseEntity
     /// <summary>
     /// Пользователь, который получил приветсвенное сообщение
     /// </summary>
-    [ForeignKey("UserReceiverId")]
     public User UserReciever { get; set; }
 
     /// <summary>
