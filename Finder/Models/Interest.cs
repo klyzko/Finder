@@ -1,4 +1,5 @@
 ﻿namespace Finder.Models;
+
 /// <summary>
 /// Интересы
 /// </summary>
@@ -17,5 +18,5 @@ public class Interest : BaseEntity
     /// <summary>
     /// Список пользователей
     /// </summary>
-    public List<User>? Users { get; set; }
+    public ICollection<User>? Users { get; set; }
 }
