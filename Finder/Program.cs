@@ -1,4 +1,6 @@
 using Finder.Data;
+using Finder.Interfaces.Repositories;
+using Finder.Repositories;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 
@@ -11,6 +13,10 @@ builder.Services.AddDbContext<ApplicationDbContext>(options =>
 builder.Services.AddDatabaseDeveloperPageExceptionFilter();
 
 builder.Services.AddRazorPages();
+
+builder.Services.AddScoped<ApplicationDbContext>();
+
+builder.Services.AddScoped<IUserAuthRepository, UserAuthRepository>();
 
 var app = builder.Build();
 
